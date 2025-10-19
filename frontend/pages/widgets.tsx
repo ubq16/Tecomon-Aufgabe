@@ -39,9 +39,9 @@ export default function WidgetsPage() {
 
   return (
     <div className="p-8 font-sans">
-      <h1 className="text-2xl font-bold mb-4">Search Cities and Add Widgets</h1>
+      <h1 className="text-2xl font-bold mb-4">Please select city from dropdown</h1>
 
-      <CreateWidget onWidgetAdded={fetchWidgets} />
+      <CreateWidget onWidgetAdded={fetchWidgets} widgets={widgets} />
 
       <ShowWidgets widgets={widgets} refreshWidgets={fetchWidgets} />
     </div>

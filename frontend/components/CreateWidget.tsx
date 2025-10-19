@@ -4,9 +4,10 @@ import cities from '../utils/cities.json';
 
 interface CreateWidgetProps {
   onWidgetAdded: () => void;
+  widgets: any[];
 }
 
-export default function CreateWidget({ onWidgetAdded }: CreateWidgetProps) {
+export default function CreateWidget({ onWidgetAdded, widgets }: CreateWidgetProps) {
   const [search, setSearch] = useState('');
   const [selectedCity, setSelectedCity] = useState<null | { name: string; lat: number; lng: number }>(null);
   const [filteredCities, setFilteredCities] = useState<typeof cities>([]);
@@ -33,7 +34,10 @@ export default function CreateWidget({ onWidgetAdded }: CreateWidgetProps) {
 
   const addWidget = async () => {
     if (!selectedCity) return;
-
+    if (widgets.some(w => w.name.toLocaleLowerCase() === selectedCity.name.toLocaleLowerCase())) {
+      alert('Widget for this city already exists.');
+      return;
+    }
     try {
       const resp = await axios.post('http://localhost:5000/api/widgets', {
         name: selectedCity.name,
@@ -42,7 +46,7 @@ export default function CreateWidget({ onWidgetAdded }: CreateWidgetProps) {
             longitude: selectedCity.lng
         }
       });
-      
+
       setSearch('');
       setSelectedCity(null);
       onWidgetAdded();
