@@ -48,7 +48,7 @@ export default function ShowWidgets({ widgets, refreshWidgets }: ShowWidgetsProp
       <div className="p-6 flex gap-4 flex-wrap">
         {widgets.map(w => {
           const bgColor = w.is_day
-            ? 'bg-gradient-to-br from-yellow-100 via-yellow-50 to-yellow-100'
+            ? 'bg-gradient-to-br from-blue-50 via-white to-blue-100'
             : 'bg-gray-700 text-white';
           
           const borderColor = w.is_day ? 'border-gray-200' : 'border-gray-600';
