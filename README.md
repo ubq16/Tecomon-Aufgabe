@@ -150,3 +150,8 @@ curl --location 'http://localhost:5000/api/widgets'
 curl for delete widgets 
 
 curl --location --request DELETE 'http://localhost:5000/api/widgets/68f40f07fdd54c3263d9f277'
+
+
+access UI on 
+
+http://localhost:3000/widgets
