@@ -36,7 +36,7 @@ export async function deleteWidget(req: Request, res: Response) {
    if (!result) {
      return res.status(404).json({ error: 'Widget not found' });
    }
-    res.status(204).json(result);
+    res.status(200).json(result);
   } catch (err: any) {
     res.status(500).json({ error: err.message });
   }

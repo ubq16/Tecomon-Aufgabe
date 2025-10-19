@@ -122,8 +122,31 @@ Kostenlose APIs zur Auswahl:
   - API-Beschreibung
   - Kurzer Architekturüberblick (z. B. mit Text oder Diagramm)
 
+## JSON files used
   All german cities and their coordinates from here
   https://github.com/pensnarik/german-cities/blob/master/germany.json
 
   images from here based on weather interpretation code
   https://gist.github.com/stellasphere/9490c195ed2b53c707087c8c2db4ec0c
+
+## Postman related curls
+
+curl for creating widget
+
+  curl --location 'http://localhost:5000/api/widgets' \
+--header 'Content-Type: application/json' \
+--data '{
+"name": "Berlin",
+"location":{
+    "latitude": 52.53,
+    "longitude" : 13.405
+}
+}'
+
+curl for get widgets
+
+curl --location 'http://localhost:5000/api/widgets'
+
+curl for delete widgets 
+
+curl --location --request DELETE 'http://localhost:5000/api/widgets/68f40f07fdd54c3263d9f277'
