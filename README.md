@@ -121,3 +121,9 @@ Kostenlose APIs zur Auswahl:
   - Setup-Anleitung
   - API-Beschreibung
   - Kurzer Architekturüberblick (z. B. mit Text oder Diagramm)
+
+  All german cities and their coordinates from here
+  https://github.com/pensnarik/german-cities/blob/master/germany.json
+
+  images from here based on weather interpretation code
+  https://gist.github.com/stellasphere/9490c195ed2b53c707087c8c2db4ec0c
